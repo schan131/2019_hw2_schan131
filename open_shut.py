@@ -14,5 +14,11 @@ file="/bigdata/gen220/shared/simple/title.basics.tsv.gz"
 if not os.path.exists(file):
     os.system("curl -O https://datasets.imdbws.com/title.akas.tsv.gz")
 
-with gzip.open(file,"r") as fh:
-    # now use the csv reader to read in the file, delimiter is '\t'
+with gzip.open("/rhome/schan131/2019_hw2_schan131/title.basics.tsv.gz", "rt", encoding="utf-8") as file:
+  reader = csv.reader(file, delimiter="\t")
+  rownum = 0
+  for row in reader:
+    location = row[3]
+      if location.lower().find("door") != -1:
+        rownum = rownum + 1
+    print("Answer 1 is", rownum)
