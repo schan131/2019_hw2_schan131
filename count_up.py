@@ -3,8 +3,8 @@
 # this is a python script template
 # this next line will download the file using curl
 
-gff="Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gff3.gz"
-fasta="Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz"
+#gff="Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gff3.gz"
+#fasta="Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz"
 
 import os,gzip,itertools
 
@@ -26,13 +26,13 @@ def aspairs(f):
 
 
 
-if not os.path.exists(gff):
-    os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/gff3/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gff3.gz")
+#if not os.path.exists(gff):
+#    os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/gff3/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gff3.gz")
 
-if not os.path.exists(fasta):
-    os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz")
+#if not os.path.exists(fasta):
+#    os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz")
     
-with gzip.open(gff,"r") as fh:
+#with gzip.open(gff,"r") as fh:
     # now add code to process this
     # data such as
     # for line in fh:
