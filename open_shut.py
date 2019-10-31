@@ -3,13 +3,18 @@ import os,csv,gzip,re,sys
 
 # write a script to create new file called closed.txt
 
-#if not os.path.exists(file):
-#    os.system("curl -O https://datasets.imdbws.com/title.akas.tsv.gz")
 
  #create output file and add contents
 sys.stdout = open("closed.txt", "w")
 
 #title.basics.tsv.gz in bigdata/gen220/shared/simple folder seems disrupted -> use a file in my folder.
+
+url="https://datasets.imdbws.com/title.basics.tsv.gz"
+in_file = os.path.basename(url)
+
+if not os.path.exists(in_file):
+    os.system("curl -O " +title.basics.tsv.gz)
+
 with gzip.open("/rhome/schan131/2019_hw2_schan131/title.basics.tsv.gz", "rt", encoding="utf-8") as file:
   reader = csv.reader(file, delimiter="\t") #open tsv file
 
@@ -25,7 +30,7 @@ with gzip.open("/rhome/schan131/2019_hw2_schan131/title.basics.tsv.gz", "rt", en
     Option3a = re.search(r"(^|\s)Open(\s|$)", location)
     Option3b = re.search(r"(^|\s)Closed(\s|$)", location)
     if Option1:
-      everydoor.append(location)
+      everydoor.append(location) 
     if Option2:
       Onlydoor.append(location)
     if Option3a:
@@ -36,5 +41,4 @@ with gzip.open("/rhome/schan131/2019_hw2_schan131/title.basics.tsv.gz", "rt", en
   print("Answer 1 is", len(everydoor), "\n", 
  "Answer 2 is", len(Onlydoor), "\n", 
  "Answer 3a: the number of movies with 'Open' is", len(withOpen), "\n", 
- "Answer 3b: the number of movies with 'Closed' is", len(withOpen), "\n")    
-
+ "Answer 3b: the number of movies with 'Closed' is", len(withClosed), "\n")
